@@ -1,7 +1,6 @@
 <x-layout title="Posts">
     <div class="flex flex-wrap items-end justify-between gap-4">
         <div>
-            <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">Journal</p>
             <h1 class="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Posts</h1>
         </div>
         <a class="inline-flex items-center justify-center rounded-full bg-red-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-red-500/30 transition hover:-translate-y-0.5 hover:bg-red-400" href="{{ route('posts.create') }}">
@@ -22,7 +21,7 @@
             </a>
         @empty
             <div class="rounded-3xl border border-dashed border-white/20 bg-slate-900/60 p-8 text-center text-sm text-slate-300">
-                No posts yet. Start your first entry.
+                No posts yet.
             </div>
         @endforelse
     </div>

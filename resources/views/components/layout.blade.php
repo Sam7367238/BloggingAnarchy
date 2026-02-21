@@ -32,6 +32,8 @@
                     @endguest
 
                     @auth
+                        <a class="text-slate-300 transition hover:text-white hover:underline hover:decoration-red-400/70 hover:underline-offset-4" href="/">Profile</a>
+
                         <form method="post" action="{{ route('logout') }}">
                             @csrf
                             @method('POST')
