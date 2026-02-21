@@ -26,6 +26,19 @@
                 <nav class="flex items-center gap-4 text-sm font-medium">
                     <a class="text-slate-300 transition hover:text-white hover:underline hover:decoration-red-400/70 hover:underline-offset-4" href="/">Home</a>
                     <a class="text-slate-300 transition hover:text-white hover:underline hover:decoration-red-400/70 hover:underline-offset-4" href="{{ route('posts.index') }}">Posts</a>
+                    @guest
+                        <a class="text-slate-300 transition hover:text-white hover:underline hover:decoration-red-400/70 hover:underline-offset-4" href="{{ route('register') }}">Register</a>
+                        <a class="text-slate-300 transition hover:text-white hover:underline hover:decoration-red-400/70 hover:underline-offset-4" href="{{ route('login') }}">Log In</a>
+                    @endguest
+
+                    @auth
+                        <form method="post" action="{{ route('logout') }}">
+                            @csrf
+                            @method('POST')
+
+                            <input type="submit" value="Log Out">
+                        </form>
+                    @endauth
                 </nav>
             </div>
         </header>
