@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
 use App\Http\Requests\PostRequest;
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -12,9 +12,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy("created_at", "desc")->paginate(10);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(10);
 
-        return view("posts.index", compact("posts"));
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -22,7 +22,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view("posts.create");
+        return view('posts.create');
     }
 
     /**
@@ -32,7 +32,7 @@ class PostController extends Controller
     {
         Post::create($request->validated());
 
-        return to_route("posts.index")->with("status", "Post Created");
+        return to_route('posts.index')->with('status', 'Post Created');
     }
 
     /**
@@ -40,7 +40,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return view("posts.show", compact("post"));
+        return view('posts.show', compact('post'));
     }
 
     /**
@@ -48,7 +48,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view("posts.edit", compact("post"));
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -58,7 +58,7 @@ class PostController extends Controller
     {
         $post->update($request->validated());
 
-        return to_route("posts.index")->with("status", "Post Updated");
+        return to_route('posts.index')->with('status', 'Post Updated');
     }
 
     /**
@@ -68,6 +68,6 @@ class PostController extends Controller
     {
         Post::destroy($post);
 
-        return to_route("posts.index")->with("status", "Post Deleted");
+        return to_route('posts.index')->with('status', 'Post Deleted');
     }
 }

@@ -1,7 +1,6 @@
 <x-layout title="Edit Post">
     <div class="flex flex-wrap items-center justify-between gap-4">
         <div>
-            <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">Refine entry</p>
             <h1 class="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Edit Post</h1>
         </div>
         <a class="text-sm font-semibold text-slate-300 transition hover:text-white" href="{{ route('posts.show', $post) }}">Back to post</a>

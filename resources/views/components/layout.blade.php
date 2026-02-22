@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     @vite("resources/css/app.css")
 </head>
-<body class="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 font-['Space_Grotesk',_sans-serif] text-slate-100 antialiased">
+<body class="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 font-['Space_Grotesk',_sans-serif] text-slate-100 antialiased bg-gray-900">
     <div class="relative min-h-screen">
         <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
             <div class="absolute -top-24 right-10 h-72 w-72 rounded-full bg-red-500/30 blur-3xl"></div>
@@ -32,14 +32,7 @@
                     @endguest
 
                     @auth
-                        <a class="text-slate-300 transition hover:text-white hover:underline hover:decoration-red-400/70 hover:underline-offset-4" href="/">Profile</a>
-
-                        <form method="post" action="{{ route('logout') }}">
-                            @csrf
-                            @method('POST')
-
-                            <input type="submit" value="Log Out">
-                        </form>
+                        <a class="text-slate-300 transition hover:text-white hover:underline hover:decoration-red-400/70 hover:underline-offset-4" href="{{ route('profile.index') }}">Profile</a>
                     @endauth
                 </nav>
             </div>

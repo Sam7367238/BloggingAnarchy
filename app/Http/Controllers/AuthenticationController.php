@@ -9,22 +9,22 @@ use Illuminate\Validation\ValidationException;
 
 class AuthenticationController extends Controller
 {
-
     public function index()
     {
-        return view("authentication.login");
+        return view('authentication.login');
     }
 
-    public function authenticate(Request $request) {
-        $fields = $request->validate(["username" => "required", "password" => "required"]);
+    public function authenticate(Request $request)
+    {
+        $fields = $request->validate(['username' => 'required', 'password' => 'required']);
 
         if (Auth::attempt($fields, true)) {
             $request->session()->regenerate();
 
-            return to_route("posts.index")->with("status", "Logged In Successfully");
+            return to_route('posts.index')->with('status', 'Logged In Successfully');
         }
 
-        throw ValidationException::withMessages(["username" => "Credentials Do Not Match"]);
+        throw ValidationException::withMessages(['username' => 'Credentials Do Not Match']);
     }
 
     public function logout()
@@ -32,6 +32,6 @@ class AuthenticationController extends Controller
         Session::flush();
         Auth::logout();
 
-        return redirect("/")->with("status", "Logged Out Successfully");
+        return redirect('/')->with('status', 'Logged Out Successfully');
     }
 }
