@@ -16,7 +16,7 @@ class Space implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         if (Str::contains($value, ' ')) {
-            $fail("The :attribute must not have any spaces.");
+            $fail('The :attribute must not have any spaces.');
         }
     }
 }
