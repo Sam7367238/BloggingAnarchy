@@ -14,6 +14,7 @@
                 <div class="flex items-start justify-between gap-4">
                     <div>
                         <h2 class="text-lg font-semibold text-white sm:text-xl">{{ $post->title }}</h2>
+                        <p class="mt-2 text-md text-slate-300">{{ '@' . $post->user->username }}</p>
                         <p class="mt-2 text-sm text-slate-400">{{ $post->created_at->diffForHumans() }}</p>
                     </div>
                     <span class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 transition group-hover:text-red-300">Open</span>

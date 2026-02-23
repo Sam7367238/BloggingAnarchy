@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\Space;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Password;
 
@@ -23,7 +24,7 @@ class RegistrationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'username' => ['required', 'unique:users', 'min:3', 'max:20'],
+            'username' => ['required', 'unique:users', 'min:3', 'max:20', new Space()],
             'password' => ['required', Password::min(8), 'max:150'],
         ];
     }

@@ -3,6 +3,7 @@
         <div>
             <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">Post</p>
             <h1 class="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">{{ $post->title }}</h1>
+            <p class="mt-2 text-md text-slate-300">{{ '@' . $post->user->username }}</p>
             <p class="mt-2 text-sm text-slate-400">{{ $post->created_at->diffForHumans() }}</p>
         </div>
         <div class="flex flex-wrap items-center gap-3">
