@@ -25,7 +25,7 @@
 
             <form method="post" action="{{ route('profile.resetPassword') }}" class="mt-6 space-y-5">
                 @csrf
-                @method('PUT')
+                @method('POST')
 
                 <div class="space-y-2">
                     <label class="text-sm font-semibold text-slate-300" for="current_password">Current Password</label>

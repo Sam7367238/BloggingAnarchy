@@ -9,7 +9,7 @@ Route::resource('/posts', PostController::class);
 
 Route::middleware('auth')->group(function () {
     Route::view('/profile', 'profile')->name('profile.index');
-    Route::put('/profile', [ProfileController::class, 'resetPassword'])->name('profile.resetPassword');
+    Route::post('/profile', [ProfileController::class, 'resetPassword'])->name('profile.resetPassword');
 });
 
 require __DIR__.'/authentication.php';
